@@ -30,3 +30,22 @@ let answer=btn.nextElementSibling;
 answer.style.maxHeight=answer.style.maxHeight?null:answer.scrollHeight+"px";
 });
 });
+
+// HAMBURGER MENU
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// CLOSE MENU WHEN CLICKING LINK
+
+document.querySelectorAll(".nav-menu a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
+});
